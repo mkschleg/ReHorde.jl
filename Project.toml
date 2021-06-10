@@ -3,6 +3,17 @@ uuid = "0196a7e5-f252-43dc-addd-83100c7c8b37"
 authors = ["Matthew Schlegel <mkschleg@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
+HDF5 = "f67ccb44-e63f-5c2f-98bd-6dc0ccc4ba2f"
+LoopVectorization = "bdcacae8-1622-11e9-2a5c-532679323890"
+MinimalRLCore = "4557a151-568a-41c4-844f-9d8069264cea"
+Pluto = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+RLToolkit = "37971928-86e1-4569-95d0-c97b2346e68c"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+Tullio = "bc48ee85-29a4-5162-ae0b-a64e1601d4bc"
+
 [compat]
 julia = "1"
 
