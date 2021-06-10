@@ -80,8 +80,7 @@ include("critterbot_utils.jl")
 include("Critterbot.jl")
 
 
-using Revise, ReHorde, ProgressMeter
-
+import ProgressMeter: @showprogress
 const CBU = ReHorde.CritterbotUtils
 
 function main_experiment()
@@ -103,12 +102,12 @@ function main_experiment()
 	    zeros(Float32, CBU.numFeatures()),
 	    ReHorde.FeatureCumulant(i),
 	    ReHorde.OnPolicy(),
-	    γ) for i in 1:length(tiled_features[1])]]
+	    γ) for i in rand(1:CBU.numFeatures(), 487)]]
                   for γ in [0.0, 0.8, 0.95, 0.9875]]...)
 
+    @show length(horde)
 
-
-    lu = TDλ(0.1/size(tiled_features, 2), 0.9)
+    lu = TDλ(0.1/length(tiled_features[1]), 0.9)
 
     @showprogress 0.1 "Time Step: " for t = 2:length(tiled_features)
         x_t = tiled_features[t-1]
